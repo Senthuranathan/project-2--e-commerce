@@ -38,7 +38,7 @@ const Shop = () => {
 
   // Filter logic
   const filteredProducts = useMemo(() => {
-    let result = [...products].filter(p => {
+    const result = [...products].filter(p => {
       const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(p.category);
       const matchesBrand = selectedBrands.length === 0 || (p.brand && selectedBrands.includes(p.brand));
       const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
